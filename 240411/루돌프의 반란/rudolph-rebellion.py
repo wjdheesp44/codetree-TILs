@@ -24,7 +24,7 @@ def crush(turn, Rx, Ry, Sx, Sy, d):    # 누구차례(1:산타, 2:루돌프), �
     if turn == 2:   # 루돌프 차례
         for idx, val in enumerate(santa):
             x, y, score, live = val[0], val[1], val[2], val[3]
-            if (Sx, Sy) == (x, y):
+            if (Sx, Sy) == (x, y) and santa[idx][3] != 0:
                 santa[idx][2] += C
                 nx, ny = Rx + C*dx[d], Ry + C*dy[d]                 # 루돌프 방향으로 밀림
                 if nx <= 0 or nx > N or ny <= 0 or ny > N:
@@ -144,7 +144,7 @@ for k in range(M):
                     crush(1, Rx, Ry, x, y, i)
                 elif ((nx - Rx)**2 + (ny - Ry)**2) < ((x - Rx)**2 + (y - Ry)**2):  # 이동했을 때 거리가 적으면
                     distance.append((((nx - Rx)**2 + (ny - Ry)**2), nx, ny, i))
-                
+
             if distance:
                 distance.sort(key=lambda x: (x[0], x[3]))
                 go_distance = distance[0]
