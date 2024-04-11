@@ -43,7 +43,7 @@ def crush(turn, Rx, Ry, Sx, Sy, d):    # 누구차례(1:산타, 2:루돌프), �
     elif turn == 1: # 산타 차례
         for idx, val in enumerate(santa):
             x, y, score, live = val[0], val[1], val[2], val[3]
-            if (Sx, Sy) == (x, y):
+            if (Sx, Sy) == (x, y) and santa[idx][3] != 0:
                 santa[idx][2] += D
                 d = (d+4)%8
                 nx, ny = Rx + D*dx[d], Ry + D*dy[d]     # 루돌프로부터 반대 방향으로 밀림
