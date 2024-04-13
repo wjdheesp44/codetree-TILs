@@ -59,7 +59,7 @@ def solve():
             if arrived[m]==0:   # 도착하지 않은 사람만 처리
                 # 편의점방향 최단거리(우선순위) 한 칸 이동
                 # 편의점에서 시작, 현재위치(상/하/좌/우 => dests (set) )
-                ni,nj=find(store[m][0],store[m][1],set(((ci-1,cj),(ci+1,cj),(ci,cj-1),(ci,cj+1))))
+                ni,nj=find(store[m][0],store[m][1],set(((ci-1,cj),(ci,cj-1),(ci,cj+1),(ci+1,cj))))
                 if (ni,nj)==store[m]:       # 최종 편의점에 도착
                     arrived[m]=time
                     alst.append((ni,nj))    # 통행금지는 모두 이동후 처리해야 함!!
