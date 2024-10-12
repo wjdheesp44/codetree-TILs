@@ -3,7 +3,7 @@ arr = [list(map(int, input().split())) for _ in range(N)]
 
 for _ in range(M):
     i, j = map(lambda x : int(x)-1, input().split())    # 참가자 좌표
-    arr[i][j] = -1  # 참가자 수만큼 뺌
+    arr[i][j] -= 1  # 참가자 수만큼 뺌
 
 ei, ej = map(lambda x:int(x)-1, input().split())    # 비상구 좌표
 arr[ei][ej] = -11
