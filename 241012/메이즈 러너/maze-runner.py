@@ -17,8 +17,8 @@ def find_square(arr):
                 mn = min(mn, max(abs(ei-i), abs(ej-j))) # 비상구와 사람 간의 거리 구하기
 
     # [2]
-    for si in range(N-mn):
-        for sj in range(N-mn):
+    for si in range(mn+1):
+        for sj in range(mn+1):
             if si <= ei <= si+mn and sj <= ej <= sj + mn:   # 비상구 있으면
                 for i in range(si, si+mn+1):
                     for j in range(sj, sj+mn+1):
